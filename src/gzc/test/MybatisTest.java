@@ -43,6 +43,17 @@ public class MybatisTest {
 			MyUser user = userDao.selectUserById(1);
 			System.out.println(user);
 
+			// 添加一个用户
+			MyUser newUser = new MyUser(8, "小花", "女");
+			userDao.addUser(newUser);
+
+			// 修改一个用户
+			MyUser updatemu = new MyUser(7, "小明", "男");
+			userDao.updateUser(updatemu);
+
+			// 删除一个用户
+			userDao.deleteUser(3);
+
 			// 查找所有用户
 			List<MyUser> myUsers = userDao.selectAllUser();
 			for (MyUser myUser : myUsers) {
