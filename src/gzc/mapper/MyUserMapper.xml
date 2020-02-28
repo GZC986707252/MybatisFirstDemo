@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <!-- namespace 的值为本Mapper的位置 -->
+<mapper namespace="gzc.mapper.MyUserMapper">
+	 <!-- 根据uid 查询一个用户信息 -->
+	 <select id="selectUserById" resultType="gzc.entity.MyUser" parameterType="Integer">
+	 	select * from myuser where uid = #{uid}
+	 </select>
+	 
+	 <!-- 查询全部用户信息 -->
+	 <select id="selectAllUser" resultType="gzc.entity.MyUser">
+	 	select * from myuser
+	 </select>
+	 
+	 <!-- 添加一个用户  #{uname} 为gzc.entity.MyUser的属性值-->
+	 <insert id="addUser" parameterType="gzc.entity.MyUser">
+	 insert into myuser values(#{uid},#{uname},#{usex})
+	 </insert>
+	 
+	 <!-- 修改一个用户 -->
+	 <update id="updateUser" parameterType="gzc.entity.MyUser">
+	 	update myuser set uname=#{uname},usex=#{usex} where uid=#{uid}
+	 </update>
+	 
+	 <!-- 删除一个用户 -->
+	 <delete id="deleteUser" parameterType="gzc.entity.MyUser">
+	 delete from myuser where uid=#{uid}
+	 </delete>
+</mapper>
