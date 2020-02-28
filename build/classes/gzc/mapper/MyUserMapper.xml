@@ -3,7 +3,7 @@
  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
  <!-- namespace 的值为本Mapper的位置 -->
-<mapper namespace="gzc.mapper.MyUserMapper">
+<mapper namespace="gzc.dao.UserDao">
 	 <!-- 根据uid 查询一个用户信息 -->
 	 <select id="selectUserById" resultType="gzc.entity.MyUser" parameterType="Integer">
 	 	select * from myuser where uid = #{uid}
